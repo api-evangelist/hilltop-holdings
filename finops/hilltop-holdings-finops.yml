@@ -8,107 +8,78 @@ alignedWith:
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
 provider: Hilltop Holdings
 providerId: hilltop-holdings
-publisherName: Hilltop Holdings
-serviceCategory: API
+publisherName: Hilltop Holdings Inc.
+serviceCategory: Banking / Insurance / Financial Services
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
   - Banking
   - Insurance
   - Financial Services
   - FinOps
-  - Cost Management
   - FOCUS
-description: FinOps framework definition for the Hilltop Holdings API surface. Provides a FOCUS-aligned
-  mapping for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
+notes: Hilltop Holdings is a financial holding company; revenue and fees flow through the operating
+  subsidiaries (PlainsCapital Bank, HilltopSecurities, PrimeLending). There is no holding-company-level
+  invoice surface. Meters and unit economics depend on which subsidiary the consumer integrates with.
+description: 'FOCUS-aligned FinOps stub for Hilltop Holdings. No public billing surface exists at the
+  holding-company level; FinOps tracking happens at the operating-subsidiary level.'
+sources:
+  - https://www.hilltop.com/
+billingModel:
+  pricingCategory: Bilateral / Negotiated (per subsidiary)
+  billingFrequency: Per Agreement
+  billingCurrency: USD
+  chargeCategories:
+    - Purchase
+    - Usage
+    - Adjustment
+focusColumns:
+  ServiceName: Hilltop Holdings
+  ServiceCategory: Banking / Insurance / Financial Services
+  ProviderName: Hilltop Holdings
+  PublisherName: Hilltop Holdings Inc.
+  InvoiceIssuerName: Hilltop Holdings subsidiary (PlainsCapital Bank / HilltopSecurities / PrimeLending)
+  PricingCategory: Bilateral
+  PricingUnit: varies
+  BillingCurrency: USD
+  ChargeCategory: Usage
 principles:
   - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
+    description: Use the executed subsidiary partner agreement's reporting cadence to track consumption
+      and fees; no holding-company-level usage API exists.
   - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
+    description: Allocate fees by subsidiary line of business (banking, brokerage, mortgage) and by
+      consuming product within your own organization.
   - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
+    description: Renegotiation and product fit at the subsidiary level are the primary cost levers.
   - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
+    description: Assign one relationship owner per subsidiary partnership; aggregate at the holding-company
+      level for executive review.
 domains:
   - name: Understand Usage and Cost
     capabilities:
-      - Data Ingestion
       - Allocation
       - Reporting and Analytics
-      - Anomaly Management
   - name: Quantify Business Value
     capabilities:
       - Planning and Estimating
-      - Forecasting
       - Budgeting
-      - Benchmarking
-      - Unit Economics
   - name: Optimize Usage and Cost
     capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
-      - Workload Optimization
-      - Cloud Sustainability
       - Licensing and SaaS
   - name: Manage the FinOps Practice
     capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
       - Invoicing and Chargeback
-      - Onboarding Workloads
       - Intersecting Disciplines
-billingModel:
-  pricingCategory: Usage-Based
-  billingFrequency: Monthly
-  billingCurrency: USD
-  chargeCategories:
-    - Usage
-    - Purchase
-    - Tax
-    - Credit
-    - Adjustment
-  chargeFrequency: Recurring
-focusColumns:
-  ServiceName: Hilltop Holdings
-  ServiceCategory: Developer Tools / API
-  ProviderName: Hilltop Holdings
-  PublisherName: Hilltop Holdings
-  InvoiceIssuerName: Hilltop Holdings
-  PricingCategory: Usage-Based
-  PricingUnit: request
-  BillingCurrency: USD
-  ChargeCategory: Usage
 meters:
-  - name: api_requests
-    description: Count of billable API requests
-    unit: request
+  - name: subsidiary_fees
+    description: Fees billed by Hilltop subsidiaries under the bilateral agreement
+    unit: varies
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
-    aggregation: sum
-    dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
-    aggregation: sum
-    dimensions:
-      - api
-      - endpoint
-      - tier
+      - subsidiary
+      - service
 apis:
   - name: Hilltop Holdings API
     baseURL: https://api.hilltop-holdings.com
@@ -117,14 +88,11 @@ apis:
       - Insurance
       - Financial Services
     serviceName: Hilltop Holdings API
-    serviceCategory: API
+    serviceCategory: Banking / Insurance / Financial Services
 unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+  - name: Cost per Subsidiary Service Call
+    metric: subsidiary_fees / subsidiary_calls
+    target: per subsidiary agreement
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
