@@ -28,6 +28,8 @@ apis:
     description: >-
       The Hilltop Holdings API provides access to platform services and data for enterprise integration and automation.
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/hilltop-holdings
   - type: Website
     url: https://www.hilltop-holdings.com
 maintainers:
