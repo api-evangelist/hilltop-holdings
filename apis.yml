@@ -31,43 +31,84 @@ tags:
   - Banking
   - Insurance
   - Financial-Services
+  - Mortgage
+  - Broker-Dealer
+  - Wealth-Management
+  - Holding-Company
 tags_raw:
   - Banking
   - Insurance
   - Financial Services
+  - Mortgage
+  - Broker Dealer
+  - Wealth Management
+  - Holding Company
 description: >-
-  Hilltop Holdings is a major US corporation and Fortune 1000 company. The Hilltop Holdings API provides programmatic access to its platform services, data, and integrations for enterprise customers and partners.
+  Hilltop Holdings Inc. (NYSE: HTH, dual-listed on NYSE Texas) is a Dallas-based financial services
+  holding company that operates through three wholly owned subsidiaries: PlainsCapital Bank, a Texas
+  commercial bank; HilltopSecurities, a full-service investment bank covering public finance, wealth
+  management, fixed income capital markets and structured finance; and PrimeLending, a national
+  residential mortgage originator. Hilltop Holdings itself is a holding company, not a software
+  vendor — it publishes no developer portal, no API reference and no machine-readable specification at
+  the holding-company level, and the subsidiaries surface their technology as end-user platforms
+  (MOmentum Advisor, HilltopBancSystems, loan servicing portals) rather than as public APIs. This
+  profile records that public surface as it actually is: a corporate site that serves an llms.txt and
+  nothing else a machine can consume.
 created: '2026-04-19'
-modified: '2026-04-19'
+modified: '2026-09-14'
 specificationVersion: '0.23'
-apis:
-  - aid: hilltop-holdings:hilltop-holdings-api
-    name: Hilltop Holdings API
-    tags:
-      - Banking
-      - Insurance
-      - Financial-Services
-    tags_raw:
-      - Banking
-      - Insurance
-      - Financial Services
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    baseURL: https://api.hilltop-holdings.com
-    humanURL: https://developer.hilltop-holdings.com
-    properties:
-      - url: https://developer.hilltop-holdings.com/docs
-        type: Documentation
-    description: >-
-      The Hilltop Holdings API provides access to platform services and data for enterprise integration and automation.
+apis: []
 common:
   - type: DomainSecurity
     url: security/hilltop-holdings-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/hilltop-holdings
   - type: Website
-    url: https://www.hilltop-holdings.com
-  - url: https://www.hilltop.com/news-media/hilltop-news/
-    type: Blog
+    url: https://www.hilltop.com/
+  - type: Blog
+    url: https://www.hilltop.com/news-media/hilltop-news/
+  - type: LLMsTxt
+    url: llms/hilltop-holdings-llms.txt
+  - type: PrivacyPolicy
+    url: https://www.hilltop.com/privacy/
+  - type: TermsOfService
+    url: https://www.hilltop.com/terms-and-conditions/
+  - type: Plans
+    url: plans/hilltop-holdings-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/hilltop-holdings-rate-limits.yml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-09-14'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Hilltop Holdings is a bank/broker-dealer/mortgage holding company with no developer program at any
+    level of the family: the two hosts this profile previously claimed, api.hilltop-holdings.com and
+    developer.hilltop-holdings.com, do not exist in DNS at all (NXDOMAIN), the corporate site
+    www.hilltop.com serves only a Yoast-generated llms.txt and answers every other discovery path with
+    an Imperva catch-all, the HilltopSecurities API host serves a default IIS start page, and the
+    hilltopsecurities / hilltopholdings / primelending GitHub organizations each hold zero public
+    repositories.
+  evidence:
+    - url: https://api.hilltop-holdings.com/
+      status: 0
+    - url: https://developer.hilltop-holdings.com/docs
+      status: 0
+    - url: https://www.hilltop.com/llms.txt
+      status: 200
+    - url: https://www.hilltop.com/.well-known/api-catalog
+      status: 200
+    - url: https://www.hilltop.com/.well-known/security.txt
+      status: 404
+    - url: https://api.hilltopsecurities.com/openapi.json
+      status: 404
+    - url: https://api.github.com/orgs/hilltopsecurities/repos
+      status: 200
+  checked: '2026-09-14'

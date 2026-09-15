@@ -6,15 +6,25 @@ providerId: hilltop-holdings
 created: '2026-05-04'
 # Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
 # bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
-method: generated
-modified: '2026-05-05'
-reconciled: false
+# 2026-09-14 enrichment pass: upgraded generated -> searched. Limits were actually looked for this
+# round; the honest answer is zero published limits because there is no public API.
+generated: '2026-09-14'
+method: searched
+source: https://www.hilltop.com/
+modified: '2026-09-14'
+reconciled: true
+limit_count: 0
 tags:
   - Banking
   - Insurance
   - Financial Services
   - Rate Limiting
-notes: Hilltop Holdings does not publish a public developer portal or rate-limit documentation at the
+notes: |
+  limit_count is 0 — no published rate limits, no documented response headers (no X-RateLimit-*,
+  RateLimit-* or Retry-After surface exists to observe) and no documented exhaustion status code,
+  because Hilltop Holdings publishes no API. Searched 2026-09-14; the claimed host
+  api.hilltop-holdings.com does not resolve in DNS. Original note follows.
+  Hilltop Holdings does not publish a public developer portal or rate-limit documentation at the
   holding-company level. Limits are enforced under bilateral subsidiary agreements (PlainsCapital Bank,
   HilltopSecurities, PrimeLending) and are not publicly disclosed.
 sources:
@@ -27,7 +37,7 @@ limits:
     metric: varies
     limit: 'see subsidiary partner agreement'
     applies:
-      - Hilltop Holdings API
+      - Bilateral subsidiary integration (no public API)
     notes: No publicly published numeric ceiling.
 policies:
   - name: Bilateral Disclosure

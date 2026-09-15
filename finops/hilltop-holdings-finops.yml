@@ -83,14 +83,15 @@ meters:
     dimensions:
       - subsidiary
       - service
+# 2026-09-14: the former entry here named baseURL https://api.hilltop-holdings.com, a host that does
+# not exist in DNS (NXDOMAIN). It was removed from apis.yml as unfounded and is removed here too.
 apis:
-  - name: Hilltop Holdings API
-    baseURL: https://api.hilltop-holdings.com
+  - name: Hilltop Holdings subsidiary integration (no public API)
     tags:
       - Banking
       - Insurance
       - Financial Services
-    serviceName: Hilltop Holdings API
+    serviceName: Hilltop Holdings subsidiary integration
     serviceCategory: Banking / Insurance / Financial Services
 unitEconomics:
   - name: Cost per Subsidiary Service Call

@@ -1,0 +1,114 @@
+generated: '2026-09-14'
+method: probed
+source: live GET of the named /.well-known/ path list on every host this record knows
+hit_count: 1
+note: >-
+  One real document was found: https://www.hilltop.com/llms.txt (HTTP 200, text/plain, 2,199 bytes, a
+  Yoast SEO v27.5 generated llms.txt) — saved verbatim to llms/hilltop-holdings-llms.txt. Every
+  /.well-known/ path on www.hilltop.com answers HTTP 200 with the SAME 6,183-byte Imperva
+  "Pardon Our Interruption" bot-challenge shell, and so does the negative-control path, so the
+  path_echo_control FAILED on that host: those 200s are a catch-all challenge, not documents, and are
+  recorded as misses. The only non-challenge response on the host is /.well-known/security.txt, which
+  returns a genuine 404. The declared website www.hilltop-holdings.com 302s to www.hilltop.com for
+  every path, and the apex hilltop.com 301s to www. No WellKnown and no SecurityTxt pointer is emitted
+  from this file: it records an absence at every /.well-known/ path. The LLMsTxt pointer in apis.yml is
+  the one real hit and is wired separately.
+hosts:
+- host: https://www.hilltop.com
+  path_echo_control: failed
+  path_echo_control_note: >-
+    /.well-known/hilltop-negative-control-9c1f4a2b.json returned HTTP 200 with the identical
+    6,183-byte challenge body as every other /.well-known/ path — an unambiguous catch-all.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 200
+    note: soft-200 Imperva bot-challenge HTML, not a document
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    note: soft-200 Imperva bot-challenge HTML, not a document
+  - path: /.well-known/oauth-protected-resource
+    status: 200
+    note: soft-200 Imperva bot-challenge HTML, not a document
+  - path: /.well-known/api-catalog
+    status: 200
+    note: soft-200 Imperva bot-challenge HTML, not a document
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    note: soft-200 Imperva bot-challenge HTML, not a document
+  - path: /.well-known/agent-card.json
+    status: 200
+    note: soft-200 Imperva bot-challenge HTML, not a document
+  - path: /.well-known/agent.json
+    status: 200
+    note: soft-200 Imperva bot-challenge HTML, not a document
+  - path: /.well-known/aauth-resource.json
+    status: 200
+    note: soft-200 Imperva bot-challenge HTML, not a document
+  - path: /.well-known/apis.json
+    status: 200
+    note: soft-200 Imperva bot-challenge HTML, not a document
+  - path: /apis.json
+    status: 200
+    note: soft-200 Imperva bot-challenge HTML, not a document
+  - path: /llms.txt
+    status: 200
+    file: ../llms/hilltop-holdings-llms.txt
+    content_type: text/plain
+    bytes: 2199
+    note: REAL DOCUMENT — Yoast SEO v27.5 generated llms.txt, saved verbatim
+  - path: /.well-known/hilltop-negative-control-9c1f4a2b.json
+    status: 200
+    note: negative control — returned the same challenge shell, proving the 200s above are a catch-all
+- host: https://hilltop.com
+  path_echo_control: n/a
+  path_echo_control_note: apex redirects; every path answers HTTP 301 to the www host
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+  - path: /.well-known/api-catalog
+    status: 301
+  - path: /.well-known/agent-card.json
+    status: 301
+  - path: /.well-known/agent.json
+    status: 301
+  - path: /llms.txt
+    status: 301
+- host: https://www.hilltop-holdings.com
+  path_echo_control: n/a
+  path_echo_control_note: >-
+    The declared website host 302s every path to www.hilltop.com — hilltop-holdings.com is a legacy
+    domain the company redirects to its current hilltop.com brand.
+  documents:
+  - path: /.well-known/security.txt
+    status: 302
+  - path: /.well-known/api-catalog
+    status: 302
+  - path: /.well-known/agent-card.json
+    status: 302
+  - path: /.well-known/agent.json
+    status: 302
+  - path: /llms.txt
+    status: 302
+- host: https://api.hilltopsecurities.com
+  path_echo_control: passed
+  path_echo_control_note: >-
+    Subsidiary host probed because api.hilltop-holdings.com does not exist in DNS. It serves the
+    default "IIS Windows Server" start page at / and returns genuine 404s elsewhere.
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /openapi.json
+    status: 404
+  - path: /swagger.json
+    status: 404
+  - path: /swagger/v1/swagger.json
+    status: 404
+  - path: /?wsdl
+    status: 403
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
