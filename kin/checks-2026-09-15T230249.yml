@@ -2,24 +2,24 @@
 kin_checks:
   slug: hilltop-holdings
   schema_version: 0.22.0
-  scored_at: '2026-09-14'
-  run_ts: 2026-09-14T064754
+  scored_at: '2026-09-15'
+  run_ts: 2026-09-15T230249
   note: Actionable checks only (missed + partial). earned/na are every other check
     in rubric/scoring-0.22.0.yml; counts below let you verify that.
   counts:
     total: 136
-    earned: 11
-    partial: 3
-    missed: 81
+    earned: 16
+    partial: 1
+    missed: 78
     na: 41
   checks:
-  - id: tags_present
-    status: missed
   - id: multiple_apis
     status: missed
-  - id: well_known_published
+  - id: human_url_per_api
     status: missed
-  - id: llms_txt_published
+  - id: base_url_per_api
+    status: missed
+  - id: well_known_published
     status: missed
   - id: apis_json_self_hosted
     status: missed
@@ -77,6 +77,8 @@ kin_checks:
     status: missed
   - id: portal_present
     status: missed
+  - id: documentation_present
+    status: missed
   - id: api_reference_present
     status: missed
   - id: getting_started_present
@@ -103,10 +105,6 @@ kin_checks:
     status: missed
   - id: sign_up_present
     status: missed
-  - id: terms_of_service
-    status: missed
-  - id: privacy_policy
-    status: missed
   - id: compliance_published
     status: missed
   - id: trust_center
@@ -116,10 +114,6 @@ kin_checks:
   - id: reg_authentication_documented
     status: missed
   - id: reg_vulnerability_disclosure
-    status: missed
-  - id: reg_terms_of_service
-    status: missed
-  - id: reg_privacy_policy
     status: missed
   - id: reg_compliance_published
     status: missed
@@ -175,12 +169,6 @@ kin_checks:
     status: missed
   - id: agentic_commerce
     status: missed
-  - id: rate_limits_documented
-    status: partial
-    earned: 2.0
-  - id: plans_present
-    status: partial
-    earned: 2.0
   - id: rate_limit_signal
     status: partial
     earned: 3.5
