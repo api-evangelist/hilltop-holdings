@@ -2,16 +2,16 @@
 kin_checks:
   slug: hilltop-holdings
   schema_version: 0.22.0
-  scored_at: '2026-09-18'
-  run_ts: 2026-09-18T231945
+  scored_at: '2026-09-19'
+  run_ts: 2026-09-19T193153
   note: Actionable checks (missed + partial) in `checks`, plus the ids that did not
     apply in `na`. Everything else in rubric/scoring-0.22.0.yml was earned; counts
     below let you verify that.
   counts:
     total: 136
-    earned: 16
+    earned: 11
     partial: 1
-    missed: 78
+    missed: 83
     na: 41
   checks:
   - id: multiple_apis
@@ -100,12 +100,21 @@ kin_checks:
     status: missed
   - id: support_channel
     status: missed
+  - id: blog_present
+    status: missed
+    detail: pointer liveness 0.0
   - id: plans_multiple
     status: missed
   - id: pricing_link
     status: missed
   - id: sign_up_present
     status: missed
+  - id: terms_of_service
+    status: missed
+    detail: pointer liveness 0.0
+  - id: privacy_policy
+    status: missed
+    detail: pointer liveness 0.0
   - id: compliance_published
     status: missed
   - id: trust_center
@@ -116,6 +125,12 @@ kin_checks:
     status: missed
   - id: reg_vulnerability_disclosure
     status: missed
+  - id: reg_terms_of_service
+    status: missed
+    detail: pointer liveness 0.0
+  - id: reg_privacy_policy
+    status: missed
+    detail: pointer liveness 0.0
   - id: reg_compliance_published
     status: missed
   - id: reg_standards_conformance
