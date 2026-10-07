@@ -96,7 +96,6 @@ apis:
 unitEconomics:
   - name: Cost per Subsidiary Service Call
     metric: subsidiary_fees / subsidiary_calls
-    target: per subsidiary agreement
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
