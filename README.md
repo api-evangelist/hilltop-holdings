@@ -1,4 +1,4 @@
-# Hilltop Holdings (hilltop-holdings)
+# Hilltop Holdings
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,23 +64,101 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Hilltop Holdings is a major US corporation and Fortune 1000 company. The Hilltop Holdings API provides programmatic access to its platform services, data, and integrations for enterprise customers and partners.
+Hilltop Holdings Inc. (NYSE: HTH, dual-listed on NYSE Texas) is a Dallas-based financial services holding company that operates through three wholly owned subsidiaries: PlainsCapital Bank, a Texas commercial bank; HilltopSecurities, a full-service investment bank covering public finance, wealth management, fixed income capital markets and structured finance; and PrimeLending, a national residential mortgage originator. Hilltop Holdings itself is a holding company, not a software vendor — it publishes no developer portal, no API reference and no machine-readable specification at the holding-company level, and the subsidiaries surface their technology as end-user platforms (MOmentum Advisor, HilltopBancSystems, loan servicing portals) rather than as public APIs. This profile records that public surface as it actually is: a corporate site that serves an llms.txt and nothing else a machine can consume.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/hilltop-holdings/refs/heads/main/apis.yml)
+**Areas:** Banking · Insurance · Financial Services · Mortgage · Broker-Dealer · Wealth Management · Holding Company
 
-**Run:** [Capabilities Using Naftiko](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=company-api-evangelist&utm_content=repo)
+## Hilltop Holdings on APIs.io
 
-## Tags:
+Everything profiled for Hilltop Holdings is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/hilltop-holdings/](https://apis.io/providers/hilltop-holdings/)** — or go straight to one of the APIs or properties below.
 
- - Banking, Insurance, Financial Services
+### Published properties
 
-## Timestamps
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- **Created:** 2026-04-19
-- **Modified:** 2026-04-19
+#### Security (1)
 
-## Maintainers
+Authentication, trust centre, and vulnerability disclosure.
 
-**FN:** Kin Lane
+- [Hilltop Holdings Domain Security](https://apis.io/security/hilltop-holdings/hilltop-holdings-domain-security/)
 
-**Email:** kin@apievangelist.com
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Hilltop Holdings Plans Pricing](https://apis.io/plans/hilltop-holdings/hilltop-holdings-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Hilltop Holdings Rate Limits](https://apis.io/rate-limits/hilltop-holdings/hilltop-holdings-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Hilltop Holdings Finops](https://apis.io/finops/hilltop-holdings/hilltop-holdings-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.hilltop.com/)
+- [Pricing](https://www.hilltop.com/)
+- [Blog](https://www.hilltop.com/news-media/hilltop-news/)
+- [Terms of service](https://www.hilltop.com/terms-and-conditions/)
+- [Privacy policy](https://www.hilltop.com/privacy/)
+
+## API Evangelist rating
+
+**Kin Score 12.9** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 21.1 |
+| Developer ergonomics | 0.0 |
+| Access clarity | 31.6 |
+
+**Agent readiness 2.5** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 5.3** — Insurance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/hilltop-holdings/](https://apis.io/providers/hilltop-holdings/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Hilltop Holdings: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/hilltop-holdings/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
