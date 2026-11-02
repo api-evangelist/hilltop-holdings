@@ -1,0 +1,80 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Hilltop Holdings
+providerId: hilltop-holdings
+created: '2026-05-04'
+# Provenance stamped 2026-08-11: this artifact was written by the API Evangelist
+# bulk sweep dated 2026-05-04, not harvested from the provider. See roadmap#35.
+# 2026-09-14 enrichment pass: upgraded generated -> searched. The pricing/plans question was
+# actually asked of the provider's live surface this round and the honest answer is zero.
+generated: '2026-09-14'
+method: searched
+source: https://www.hilltop.com/
+modified: '2026-09-14'
+reconciled: true
+plan_count: 0
+tags:
+  - Banking
+  - Insurance
+  - Financial Services
+notes: |
+  plan_count is 0 — Hilltop Holdings publishes NO public API plans or pricing of any kind. Searched
+  2026-09-14 across www.hilltop.com (llms.txt page inventory, news, contact), the HilltopSecurities
+  technology page and the PlainsCapital / PrimeLending sites; no developer portal, no API pricing page
+  and no rate card exists at any level of the family. The single plans[] entry below is a description
+  of how commercial access actually works (bilateral subsidiary agreements), not a published tier.
+  Original note follows. Hilltop Holdings is a financial holding company (PlainsCapital Bank, HilltopSecurities, PrimeLending).
+  It does not operate a public developer portal at the holding-company level. Any API integrations would be
+  with the operating subsidiaries under bilateral commercial / partner agreements. No public per-tier API
+  pricing or rate-limit data exists at the Hilltop Holdings level. This artifact is intentionally minimal
+  and unreconciled.
+sources:
+  - https://www.hilltop.com/
+  - https://www.hilltopsecurities.com/technology/
+  - https://www.hilltop.com/llms.txt
+description: Hilltop Holdings does not publish public API pricing. Subsidiary-level integrations are
+  governed by bilateral commercial agreements.
+plans:
+  - id: hilltop-holdings-partner
+    name: Subsidiary Partner Agreement
+    type: enterprise
+    description: API and data integrations with Hilltop Holdings subsidiaries (PlainsCapital Bank,
+      HilltopSecurities, PrimeLending) are negotiated bilaterally through standard banking / brokerage
+      / mortgage partner programs. Pricing, quotas, SLAs, and rate limits are not publicly disclosed.
+    entries:
+      - label: Subsidiary Partner Access
+        description: Pricing and quotas negotiated bilaterally; not publicly disclosed
+        name: subsidiary_partner_access
+        type: quota
+        metric: varies
+        limit: -1
+        timeFrame: month
+        geo: US
+        domains:
+          - https://www.hilltop.com
+        unit: 1
+        price: 'contact provider'
+        userMultiplied: false
+    elements:
+      - name: Subsidiary Bilateral Agreement Required
+      - name: Hilltop Holdings API
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
+x-canonical:
+  generated: '2026-11-01'
+  vocabulary: engine/economics/plans-canonical.yml
+  models:
+  - negotiated
+  units:
+  - negotiated
+  plans:
+  - name: Subsidiary Partner Agreement
+    access: enterprise
+    model: negotiated
+    model_how: derived
+    units:
+    - negotiated
+    periods:
+    - month
